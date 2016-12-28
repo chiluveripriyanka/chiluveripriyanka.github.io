@@ -11,7 +11,14 @@ function LunchCheckController($scope) {
 		var mystring = $scope.name; // get the input value
 		if(mystring != null){
 			var elements = mystring.split(',');
-			if(elements.length > 3){ // check if count is morethan 3
+			var num = 0;
+	        var i; //item counter
+	        for (i in elements) { // empty string doesn't count
+	          if(!(elements[i].length == 0 || !elements[i].trim())){
+	            num += 1;
+	          }
+	        }
+			if(num > 3){ // check if count is morethan 3
 				$scope.message = "Too much!"; 
 				$scope.border_color = "border-red";
 				$scope.font_color = "red";
