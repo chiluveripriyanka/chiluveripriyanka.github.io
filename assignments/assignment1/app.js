@@ -9,7 +9,7 @@ function LunchCheckController($scope) {
 
 	$scope.checkIfTooMuch = function(){
 		var mystring = $scope.name; // get the input value
-		if(mystring != null){
+		if(mystring != null && mystring != ''){
 			var elements = mystring.split(',');
 			var num = 0;
 	        var i; //item counter
