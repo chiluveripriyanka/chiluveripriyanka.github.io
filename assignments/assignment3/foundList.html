@@ -1,0 +1,20 @@
+<div class="row col-md-12">
+  <div class="col-md-3 list mt20" ng-repeat="item in list.found">
+    <div class="thumbnail h300">
+      <div class="caption">
+        <h4>Item Name : </h4>{{ item.name }} <br>
+        <h4>Short Name : </h4>{{ item.short_name }}
+        <p>
+          <span> Price Small {{ item.price_small | currency }}</span> 
+          <span> Price Large {{ item.price_large | currency }}</span>
+        </p>
+        <h4>Item Description : </h4>
+        <p>{{ item.description }}</p>
+        <button class="btn btn-danger btn-sm" ng-click="list.onRemove({index: $index});">Don't want this one!</button>
+      </div>
+    </div>
+  </div>
+  <div ng-if="list.isEmpty()" class="mt20">
+    <div class="alert alert-warning">Nothing found</div>
+  </div>
+</div>
